@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: composer install --no-ansi --no-interaction --no-progress --optimize-autoloader
 
+      - name: Copy file example env
+        run: cp .env.example .env
+
       - name: Generate key
         run: php artisan key:generate
 
@@ -44,6 +47,9 @@ jobs:
 
       - name: Install dependencies
         run: composer install --no-ansi --no-interaction --no-progress --optimize-autoloader
+
+      - name: Copy file example env
+        run: cp .env.example .env
 
       - name: Generate key
         run: php artisan key:generate
