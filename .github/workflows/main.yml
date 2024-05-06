@@ -31,6 +31,9 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
+      - name: Run Migration Database
+        run: php artisan migrate:fresh --seed
+
   laravel_test:
     name: Laravel Test
     runs-on: ubuntu-latest
@@ -53,6 +56,9 @@ jobs:
 
       - name: Generate key
         run: php artisan key:generate
+      
+      - name: Run Migration Database
+        run: php artisan migrate:fresh --seed
 
       - name: Run tests
         run: vendor/bin/phpunit
