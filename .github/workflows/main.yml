@@ -60,8 +60,11 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
       
-      # - name: Run Migration Database
-      #   run: php artisan migrate:fresh --seed
+      - name: Create File Database
+        run: touch database/database.sqlite
+
+      - name: Run Migration Database
+        run: php artisan migrate:fresh --seed
 
       - name: Run tests
         run: vendor/bin/phpunit
