@@ -38,7 +38,7 @@ jobs:
         run: php artisan migrate:fresh --seed
 
       - name: Install Breeze
-        run: php artisan breeze:install
+        run: php artisan breeze:install --no-interaction
       
       - name: Setup Node.js
         uses: actions/setup-node@v2
